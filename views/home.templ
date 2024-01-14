@@ -2,8 +2,8 @@ package views
 
 templ Home(title string) {
   @Layout(title) {
-    <div style="display: flex; width: 1000px; height: 600px">
-        <textarea id="md" style="flex: 1; resize: none"></textarea>
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; width: 1000px; height: 600px; max-width: 100%; max-height: 100%;">
+        <textarea id="md" style="flex: 1; resize: none;"></textarea>
         <div id="render" style="flex: 1; overflow-y: auto"></div>
     </div>
     
