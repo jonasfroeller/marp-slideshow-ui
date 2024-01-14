@@ -5,3 +5,4 @@ vendor
 *.iml
 *.out
 .vscode
+**_templ.go

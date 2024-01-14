@@ -1,0 +1,24 @@
+package views
+
+templ Home(title string) {
+  @Layout(title) {
+    <div style="display: flex; width: 1000px; height: 600px">
+        <textarea id="md" style="flex: 1; resize: none"></textarea>
+        <div id="render" style="flex: 1; overflow-y: auto"></div>
+    </div>
+    
+    <script type="module">
+        import { Marp } from 'https://esm.sh/@marp-team/marp-core?bundle'
+        import browser from 'https://esm.sh/@marp-team/marp-core/browser'
+
+        const marp = new Marp({ script: false })
+
+        md.addEventListener('input', () => {
+            const { html, css } = marp.render(md.value)
+            render.innerHTML = `${html}<style>${css}</style>`
+
+            browser(render) // Post-process for browser to apply auto scaling
+        })
+    </script>
+  }
+}
